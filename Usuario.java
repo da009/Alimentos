@@ -29,6 +29,10 @@ public class Usuario
     {
        this.nombre = nombre;
        this.gramos = 0;
+       this.totalProteinas = 0;
+       this.totalCarbohidratos = 0;
+       this.totalGrasas = 0;
+       this.totalCalorias = 0;
     }
     
     /**
@@ -36,12 +40,6 @@ public class Usuario
      */
     public void comer(Alimento comida, float gramos)
     {
-        // Inicializa las variables a "0".
-        this.totalProteinas = 0;
-        this.totalCarbohidratos = 0;
-        this.totalGrasas = 0;
-        this.totalCalorias = 0;
-        
         totalProteinas = totalProteinas + (comida.getProt()*(gramos/100));
         totalCarbohidratos = totalCarbohidratos + (comida.getCarb()*(gramos/100));
         totalGrasas = totalGrasas + (comida.getGras()*(gramos/100));
