@@ -9,7 +9,6 @@ public class Alimento
 {
     private String nombre;
     private String CompMay;
-    private float gramos;
     private float proteinas;
     private float carbohidratos;
     private float grasas;
@@ -18,10 +17,9 @@ public class Alimento
     /**
      * Costructor para alimentos.
      */
-    public Alimento(String nombre,float gramos, float proteinas, float carbohidratos, float grasas)
+    public Alimento(String nombre, float proteinas, float carbohidratos, float grasas)
     {
         this.nombre = nombre;
-        this.gramos = gramos;
         this.proteinas = proteinas;
         this.carbohidratos = carbohidratos;
         this.grasas = grasas;
@@ -62,7 +60,7 @@ public class Alimento
             CompMay =  "Proteinas" + ", " + "carbohidratos" + " y " + "grasas";
         }
         System.out.println("Nombre: "                               + nombre);
-        System.out.println("Proteinas por cada 100 gramos: "        + gramos);
+        System.out.println("Proteinas por cada 100 gramos: "        + proteinas);
         System.out.println("Carbohidratos  por cada 100 gramos: "   + carbohidratos);
         System.out.println("Grasas  por cada 100 gramos: "          + grasas);
         System.out.println("Calorias: "                             + calorias);
