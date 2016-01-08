@@ -66,4 +66,36 @@ public class Alimento
         System.out.println("Calorias: "                             + calorias);
         System.out.println("Componente/s mayoritario/s: "           + CompMay);
     }
+    
+    /**
+     * Devuelve el valor de las proteínas.
+     */
+    public float getProt()
+    {
+        return proteinas;
+    }
+    
+    /**
+     * Devuelve el valor de las carb.
+     */
+    public float getCarb()
+    {
+        return carbohidratos;
+    }
+    
+    /**
+     * Devuelve el valor de las grasas.
+     */
+    public float getGras()
+    {
+        return grasas;
+    }
+    
+    /**
+     * Devuelve el valor de las calorías.
+     */
+    public float getCal()
+    {
+        return calorias;
+    }
 }
