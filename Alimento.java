@@ -31,15 +31,15 @@ public class Alimento
      */
     public void mostrarDatos()
     {
-        if (proteinas > carbohidratos && proteinas > grasas && carbohidratos != grasas)
+        if (proteinas > carbohidratos && proteinas > grasas)
         {
             CompMay = "Proteinas";
         }
-        else if (carbohidratos > proteinas && carbohidratos > grasas && proteinas != grasas)
+        else if (carbohidratos > proteinas && carbohidratos > grasas)
         {
             CompMay = "Carbohidratos";
         }
-        else if (grasas > proteinas && grasas > carbohidratos && proteinas != carbohidratos)
+        else if (grasas > proteinas && grasas > carbohidratos)
         {
             CompMay = "Grasas";
         }
@@ -55,7 +55,7 @@ public class Alimento
         {
             CompMay = "Carbohidratos" + " y " + "grasas";
         }
-        else
+        else if (carbohidratos == grasas && carbohidratos == proteinas)
         {
             CompMay =  "Proteinas" + ", " + "carbohidratos" + " y " + "grasas";
         }
