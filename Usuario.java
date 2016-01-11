@@ -58,4 +58,44 @@ public class Usuario
         System.out.println("Calorias totales ingeridas:: "                  + totalCalorias);
     }
     
+    /**
+     * Método getter de calorías.
+     */
+    public float getCal()
+    {
+        return totalCalorias;
+    }
+    
+    /**
+     * Método getter para el nombre.
+     */
+    public String getNom()
+    {
+        return nombre;
+    }
+    
+    /**
+     * Método para comparar las calorías ingeridas por dos usuarios.
+     */
+    public void comparacion(Usuario user2)
+    {
+        String nombreComp = user2.getNom();
+        float caloriasComp = user2.getCal();
+        
+        if (totalCalorias > caloriasComp)
+        {
+            System.out.println(nombre + " ha consumido más calorias que " + nombreComp + "(" + 
+            totalCalorias + " frente a " + caloriasComp + ").");
+        }
+        else if (totalCalorias < caloriasComp)
+        {
+            System.out.println(nombreComp + " ha consumido más calorias que " + nombre + "(" + 
+            caloriasComp + " frente a " + totalCalorias + ").");
+        }
+        else if (totalCalorias == caloriasComp)
+        {
+            System.out.println(nombre + " ha consumido las mismas calorias que " + nombreComp + "(" + 
+            "ambos han consumido " + totalCalorias + ").");
+        }
+    }
 }
