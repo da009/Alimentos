@@ -98,4 +98,12 @@ public class Alimento
     {
         return calorias;
     }
+    
+    /**
+     * Devuelve el nombre del alimento.
+     */
+    public String getNom()
+    {
+        return nombre;
+    }
 }

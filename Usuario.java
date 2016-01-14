@@ -21,6 +21,12 @@ public class Usuario
     private float totalGrasas;
     // Calorias del alimento.
     private float totalCalorias;
+    // Calorías máximas.
+    private float maxCal;
+    // Nombre de la comida con más calorías
+    private String nomMaxCal;
+    // Calorías de la última comida.
+    private float nuevaCom;
     
     /**
      * Nombre del usuario.
@@ -33,6 +39,7 @@ public class Usuario
        this.totalCarbohidratos = 0;
        this.totalGrasas = 0;
        this.totalCalorias = 0;
+       this.maxCal = 0;
     }
     
     /**
@@ -40,6 +47,12 @@ public class Usuario
      */
     public void comer(Alimento comida, float gramos)
     {
+        nuevaCom = comida.getCal()*(gramos/100);
+        if (maxCal*(gramos/100) < nuevaCom)
+        {
+            maxCal = comida.getCal();
+            nomMaxCal = comida.getNom();
+        }
         totalProteinas = totalProteinas + (comida.getProt()*(gramos/100));
         totalCarbohidratos = totalCarbohidratos + (comida.getCarb()*(gramos/100));
         totalGrasas = totalGrasas + (comida.getGras()*(gramos/100));
@@ -96,6 +109,19 @@ public class Usuario
         {
             System.out.println(nombre + " ha consumido las mismas calorias que " + nombreComp + "(" + 
             "ambos han consumido " + totalCalorias + ").");
+        }
+    }
+    
+    /**
+     * Método que muestra el alimento con más calorias por cada 100 gramos.
+     */
+    public void MasCal()
+    {
+        System.out.println("Alimento más calórico ingerido por este usuario hasta el momento: " +
+        nomMaxCal + " (" + maxCal + " calorias por cada 100 gramos)");
+        if (maxCal == 0)
+        {
+            System.out.println("No se han consumido calorías");
         }
     }
 }
