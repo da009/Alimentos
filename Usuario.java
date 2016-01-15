@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class Usuario here.
@@ -25,8 +26,10 @@ public class Usuario
     private float maxCal;
     // Nombre de la comida con más calorías
     private String nomMaxCal;
-    // Calorías de la última comida.
+    // Calorías de la comida que acaba de ingerir.
     private float nuevaCom;
+    // Arraylist para los alimentos consumidos.
+    private ArrayList <Alimento>Cons;
     
     /**
      * Nombre del usuario.
@@ -40,6 +43,7 @@ public class Usuario
        this.totalGrasas = 0;
        this.totalCalorias = 0;
        this.maxCal = 0;
+       Cons = new ArrayList<Alimento>();
     }
     
     /**
@@ -57,6 +61,7 @@ public class Usuario
         totalCarbohidratos = totalCarbohidratos + (comida.getCarb()*(gramos/100));
         totalGrasas = totalGrasas + (comida.getGras()*(gramos/100));
         totalCalorias = totalCalorias + (comida.getCal()*(gramos/100));
+        Cons.add(comida);
     }
     
     /**
@@ -122,6 +127,23 @@ public class Usuario
         if (maxCal == 0)
         {
             System.out.println("No se han consumido calorías");
+        }
+    }
+    
+    /**
+     * Muestra los datos de un alimento consumido por el usuario y almacenados en un ArrayList.
+     */
+    public void DatAli(int PosNum)
+    {
+        if (PosNum > 0 && PosNum <= Cons.size())
+        {
+            Alimento Com;
+            Com = Cons.get(PosNum-1);
+            Com.mostrarDatos();
+        }
+        else 
+        {
+            System.out.println("No se ha introducido una posición válida");
         }
     }
 }

@@ -106,4 +106,12 @@ public class Alimento
     {
         return nombre;
     }
+    
+    /**
+     * Devuelve el componenete mayoritario.
+     */
+    public String getCompMay()
+    {
+        return CompMay;
+    }
 }
