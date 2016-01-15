@@ -146,4 +146,56 @@ public class Usuario
             System.out.println("No se ha introducido una posición válida");
         }
     }
+    
+    /**
+     * Mñetodo que introduciendo el nombre de un alimento muestre cuantas veces se ha ingerido dicho
+     * alimento.
+     */
+    public void BuscRep(String nom)
+    {
+        int numVeces = 0;
+        for (Alimento comida : Cons)
+        {
+            if (comida.getNom().contains(nom))
+            {
+                numVeces = numVeces + 1;
+            }
+        }
+        
+        if (numVeces > 1)
+        {
+            System.out.println("El alimento " + nom + " ha sido ingerido " + numVeces +
+            " anteriormente.");
+        }
+        else if (numVeces == 1)
+        {
+            System.out.println("El alimento " + nom + " solo ha sido ingerido una vez");
+        }
+        else
+        {
+            System.out.println("El alimento no ha sido ingerido en ningún momento");
+        }
+    }
+    
+    /**
+     * Método para mostrar el nombre de los alimentos consumidos más de una vez sin introducir
+     * parámetros.
+     */
+    public void numRep()
+    {
+        int numVeces = 0;
+        for (Alimento comida : Cons)
+        {
+            if (Cons.contains(comida.getNom()))
+            {
+                numVeces = numVeces + 1;
+            }
+            
+            if (numVeces > 1)
+            {
+                System.out.println("El alimento " + comida.getNom() +
+                "Se ha ingerido anteriormente.");
+            }
+        }
+    }
 }
